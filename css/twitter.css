@@ -1,0 +1,134 @@
+/* Twitter CSS Page */
+:root {
+    --main-bg: #E6ECF0;
+    --link-color: #3B94D9;
+    --main-link-color: #848487;
+    --light-bg: #FFF;
+    --separator-color: #DDD;
+}
+* {
+    box-sizing: border-box;
+}
+body, html {
+    background-color: var(--main-bg);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+header {
+    background-image: url("https://loremflickr.com/1200/300");
+    background-size: cover;
+    min-height: 300px;
+    padding-top: 275px;
+}
+a {
+    color: var(--link-color);
+}
+.top-nav {
+    position: fixed;
+    width: 100%;
+    background: var(--light-bg);
+    z-index: 2;
+}
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-item {
+    display: inline-block;
+    padding: 1.5em;
+}
+.nav-link {
+    color: var(--main-link-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+.nav-link:hover {
+    color: var(--link-color);
+}
+.container {
+    width: 100%;
+    float: left;
+    margin-top: 2em;
+    padding-bottom: 30px;
+}
+.profile {
+    height: 80px;
+    clear: both;
+    width: 100%;
+    float: right;
+    background: var(--light-bg);
+    margin-bottom: 20px;
+}
+.profile-form {
+    float: right;
+    line-height: 80px;
+}
+.profile-details {
+    margin: 0 .5em;
+    width: calc(25% - 1em);
+    float: left;
+}
+.profile-items {
+    list-style: none;
+}
+.profile-entry {
+    margin: .5em;
+}
+.timeline {
+    margin: 0 .5em;
+    width: calc(50% - 1em);
+    float: left;
+}
+.media {
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
+    padding: .5em;
+    overflow: scroll;
+}
+.media-image {
+    float: left;
+    max-width: 50px;
+    margin-top: 1.33em;
+}
+.media-body {
+    float: left;
+    width: calc(100% - 50px);
+}
+.who-to-follow {
+    margin: 0 .5em;
+    width: calc(25% - 1em);
+    float: left;
+}
+.profile-image {
+    position: absolute;
+    z-index: 1;
+    top: 260px;
+    left: 20px;
+}
+.btn {
+    border: 1px solid var(--main-link-color);
+    color: var(--main-link-color);
+    background: var(--light-bg);
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+}
+.btn-large {
+    font-size: 1.3em;
+    padding: 10px;
+}
+.img-circle {
+    border-radius: 100%;
+    border: 4px solid var(--light-bg);
+}
+.text-right {
+    text-align: right;
+}
+.text-muted {
+    color: var(--main-link-color);
+}
