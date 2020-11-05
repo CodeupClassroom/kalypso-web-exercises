@@ -1,2 +1,2 @@
 # Codeup Web Exercises
-From codeup HTML/JS Curriculum
+From codeup HTML/JS Curriculum 
