@@ -42,6 +42,23 @@ console.log(sayHello(myName));
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
 
+
+function whatNum(num){
+    if (num === 1){
+        console.log("The number was one.")
+    } else if (num === 2) {
+        console.log("The number was two.")
+    } else if (num === 3) {
+        console.log("The number was three.")
+    } else {
+        console.log("How did you get this number??")
+    }
+}
+
+console.log("Our random number is:" + random)
+whatNum(random)
+
+
 /**
  * TODO:
  * Create a function called 'isTwo' that takes a number as a parameter.
