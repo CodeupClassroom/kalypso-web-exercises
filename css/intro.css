@@ -1,0 +1,24 @@
+#style {
+    color:mediumslateblue;
+    background-color: yellow;
+    text-decoration:underline;
+    font-family: cursive
+}
+#intro {
+    color: blue;
+    background-color: pink;
+    font-weight: bold;
+}
+#sheets {
+    /*color: red;*/
+    background-color: gray;
+    font-family: "Comic Sans MS";
+}
+#cascading {
+    color: mediumaquamarine;
+    background-color: mintcreamq;
+    font-family: Impact, Serif;
+}
+#heading {
+    color: blue;
+}
