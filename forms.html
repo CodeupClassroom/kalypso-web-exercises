@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="https://request-inspector.glitch.me/">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+    <br>
+    <label for="confirm">Confirm Password</label>
+    <input type="password" id="confirm">
+    <br>
+    <button onclick="checkPW()">Check Passwords</button>
+</form>
+<script>
+    function checkPW(e){
+        var pw1 = document.getElementById("password").value;
+        var pw2 = document.getElementById("confirm").value;
+        if (pw1 === pw2) {
+            alert("They're the same!");
+        } else {
+            alert("Passwords must match!");
+        }
+    }
+</script>
+</body>
+</html>
