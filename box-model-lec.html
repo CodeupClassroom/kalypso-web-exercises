@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/box-model.css">
+    <title>CSS Box Model</title>
+</head>
+<body>
+<div class="main">
+    <h1>Box Model</h1>
+    <h3>We'll be taking a look at the difference between/among:</h3>
+    <ul>
+        <li>Width</li>
+        <li>Height</li>
+        <li>Padding</li>
+        <li>Border</li>
+        <li>Margin</li>
+        <li>Overall Size</li>
+        <li>Divs</li>
+        <li>spans</li>
+    </ul>
+
+    <!-- Now let's add some controls to actually add / remove padding/margin/dimension -->
+    <div class="dimension-control">
+        <div id="width-control">
+            <h3>Width: <span id="width-value"></span></h3>
+            <button id="width-control-up" class="button">Bigger</button>
+            <button id="width-control-down" class="button">Smaller</button>
+        </div>
+
+        <div id="height-control">
+            <h3>Height: <span id="height-value"></span></h3>
+            <button id="height-control-up" class="button">Bigger</button>
+            <button id="height-control-down" class="button">Smaller</button>
+        </div>
+
+        <div id="padding-control">
+            <h3>Padding: <span id="padding-value"></span></h3>
+            <button id="padding-control-up" class="button">More</button>
+            <button id="padding-control-down" class="button">Less</button>
+        </div>
+
+        <div id="margin-control">
+            <h3>Margin: <span id="margin-value"></span></h3>
+            <button id="margin-control-up" class="button">More</button>
+            <button id="margin-control-down" class="button">Less</button>
+        </div>
+    </div>
+
+    <div id="the-outer-box">
+        <div id="the-inner-box">
+            <p>Yeah, but your scientists were so preoccupied with whether or not they could, they didn't stop to think if they should. Is this my espresso machine? Wh-what is-h-how did you get my espresso machine? God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.</p>
+            <p>Did he just throw my cat out of the window? God help us, we're in the hands of engineers. Do you have any idea how long it takes those cups to decompose. Hey, you know how I'm, like, always trying to save the planet? Here's my chance. I gave it a cold? I gave it a virus. A computer virus.</p>
+        </div>
+    </div>
+
+
+</div>
+<footer>Here's a footer just to add in some more space </footer>
+<script src="js/box-model.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+body {
+    background-color: aquamarine;
+}
+#outer-box {
+    height: 266px;
+    background-color: #3e8e41; /* green */
+}
+#inner-box {
+    /* Where the text is */
+    height: 100%;
+    padding: 25px;
+    margin: 15px;
+    background-color: lightblue;
+}
+#section-two, #section-three, #section-four, #section-five {
+    font-size: 24px;
+    padding: 45px;
+    text-align: center;
+}
+#section-three, #section-four, #section-five {
+    margin-top: 20px;
+    border-top: white solid 5px;
+}
+#section-two {
+    background-color: darkgoldenrod;
+}
+#section-three {
+    color: white;
+    background-color: darkslateblue;
+}
+#section-four {
+    background-image: url("https://images.pexels.com/photos/1295138/pexels-photo-1295138.jpeg");
+    color: white;
+    padding: 0;
+    background-size: cover;
+    min-height: 300px;
+    border-radius: 45px;
+}
+.darken {
+    height: 324px;
+    width: 100%;
+    padding: 45px;
+    background-color: rgba(0,0,0,0.4);
+}
+#section-five {
+    color: white;
+    background-color: darkslateblue;
+}
+.space-me-out {
+    margin-left: 60px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    color: darksalmon;
+    font-weight: bold;
+}

@@ -1,0 +1,72 @@
+.main {
+    padding: 20px;
+}
+/* Demo of adding margin in multiple ways */
+.codehilite {}
+
+
+#the-outer-box {
+    /* Let's keep this in the middle of the screen, yeah? */
+    display: block;
+    width: 500px;
+    min-width: 300px;
+    max-width: 600px;
+    height: 500px;
+    min-height: 300px;
+    max-height: 600px;
+    margin: 0 auto; /* This sets the left and right margins to automatically center */
+    background: lightgreen;
+    transition: all 0.3s;
+    padding: 0;
+}
+#the-inner-box {
+    /* This is the box with the Jeffsum in it */
+    background: lightgray;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.5em;
+    margin: 0;
+}
+.dimension-control {
+    width: 100vw;
+    height: 125px;
+    margin-top: 20px;
+}
+.dimension-control h3 {
+    text-align: center;
+}
+#width-control, #height-control, #padding-control, #margin-control {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+footer {
+    background: lightcyan;
+    height: 100px;
+    line-height: 100px; /* Setting the line-height the same as the element height centers the text vertically */
+    text-align: center;
+    margin-top: 35px;
+}
