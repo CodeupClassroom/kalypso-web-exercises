@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/flexbox-lec.css">
+    <title>Flexbox</title>
+</head>
+<body>
+<div class="main">
+    <h1>Flexbox</h1>
+    <h3>Let's examine how we can modify content layout with Flexbox</h3>
+    <hr>
+    <h2>Display and Alignment Properties</h2>
+    <div id="box-container-1">
+        <div class="box1 single-box">Box 1</div>
+        <div class="box2 single-box">Box 2</div>
+        <div class="box3 single-box">Box 3</div>
+        <div class="box4 single-box">Box 4</div>
+        <div class="box5 single-box">Box 5</div>
+    </div>
+
+    <hr>
+    <h2>Directional (Axis) Differences</h2>
+    <div id="box-container-2">
+        <div class="box1 single-box">Box 1</div>
+        <div class="box2 single-box">Box 2</div>
+        <div class="box3 single-box">Box 3</div>
+        <div class="box4 single-box">Box 4</div>
+        <div class="box5 single-box">Box 5</div>
+        <div class="box6 single-box">Box 6</div>
+        <div class="box7 single-box">Box 7</div>
+        <div class="box8 single-box">Box 8</div>
+<!--        <div class="box9 single-box">Box 9</div>-->
+<!--        <div class="box10 single-box">Box 10</div>-->
+    </div>
+
+    <hr>
+    <h2>Looking at a Column View</h2>
+    <div id="box-container-3">
+        <div class="box1 single-box">Box 1</div>
+        <div class="box2 single-box">Box 2</div>
+        <div class="box3 single-box">Box 3</div>
+        <div class="box4 single-box">Box 4</div>
+        <div class="box5 single-box">Box 5</div>
+    </div>
+
+    <hr>
+    <h2>Nesting Multiple Views, Order, and Flex Grow</h2>
+    <div id="box-container-4"> <!-- MAIN PARENT CONTAINER -->
+        <div class="nested-flex-box first">  <!-- CHILD CONTAINER 1 -->
+            <div class="box1 single-box">Box 1</div>
+            <div class="box2 single-box">Box 2</div>
+            <div class="box3 single-box">Box 3</div>
+            <div class="box4 single-box">Box 4</div>
+            <div class="box5 single-box">Box 5</div>
+        </div>
+        <div class="nested-flex-box second">  <!-- CHILD CONTAINER 2 -->
+            <div class="box6 single-box">Box 6</div>
+            <div class="box7 single-box">Box 7</div>
+            <div class="box8 single-box">Box 8</div>
+            <div class="box9 single-box">Box 9</div>
+            <div class="box10 single-box">Box 10</div>
+        </div>
+        <div class="nested-flex-box third">  <!-- CHILD CONTAINER 3 -->
+            <div class="box1 single-box">Box 11</div>
+            <div class="box2 single-box">Box 12</div>
+            <div class="box3 single-box">Box 13</div>
+            <div class="box4 single-box">Box 14</div>
+            <div class="box5 single-box">Box 15</div>
+        </div>
+    </div>
+
+</div>
+<footer>Here's a footer just to add in some more space </footer>
+<script src="js/flexbox-lec.js"></script>
+</body>
+</html>

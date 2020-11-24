@@ -1,0 +1,139 @@
+/********************* COLOR SCHEME *******************/
+:root {
+    --color1: rebeccapurple;
+    --color2: darkgoldenrod;
+    --color3: darkred;
+    --color4: royalblue;
+    --color5: forestgreen;
+}
+/********************* GENERAL STYLES *******************/
+body {
+    /* Got this from Google Fonts */
+    font-family: "Merriweather", serif;
+    background-color: #181a1b;
+    color: white;
+}
+h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+div.main {
+    padding: 10px 30px;
+}
+/********************* CONTAINER 1 *******************/
+#box-container-1 {
+    /* This is where I'll declare the display: flex for all the inner boxes */
+    display: flex;
+    width: 100%;
+    /*justify-content: flex-start;*/
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+div.single-box {
+    display: inherit;
+    width: 200px;
+    height: 200px;
+    justify-content: center; /*  Centers text horizontally (main axis) */
+    align-items: center;     /*  Centers text vertically  (cross axis) */
+    font-size: 2em;
+    margin-bottom: 10px;     /*  Little space beneath each of the boxes */
+    cursor: pointer;         /*  Make it pretty when we mouseover       */
+}
+/********************* SET ALL BOX COLORS *******************/
+.box1, .box10 { background-color: var(--color1); }
+.box2, .box9 { background-color: var(--color2); }
+.box3, .box8 { background-color: var(--color3); }
+.box4, .box7 { background-color: var(--color4); }
+.box5, .box6 { background-color: var(--color5); }
+
+/********************* CONTAINER 2 *******************/
+/* Now some rules for the second set of boxes */
+#box-container-2 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+    margin-bottom: 30px;
+}
+#box-container-2 div.single-box {
+    /* Going to override the height and the border-radius for these boxes */
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+}
+/********************* CONTAINER 3 *******************/
+#box-container-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 400px;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+#box-container-3 div.single-box {
+    height: auto;
+    width: 100px;
+    border-radius: 10px;
+    padding: 10px 20px;   /* Giving these a really "button" look */
+}
+/********************* CONTAINER 4 *******************/
+/******************* 3 subcontainers *****************/
+#box-container-4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Horizontal Alignment of all 3 child containers */
+    align-items: flex-end; /* Vertical Alignment */
+    flex-wrap: wrap;       /* All the buttons can wrap around themselves now */
+    height: 450px;         /* Only using this to show align-items at large resolutions */
+}
+@media screen and (max-width: 779px) {
+    /* don't worry about this yet */
+    #box-container-4 {
+        height: auto;
+    }
+}
+#box-container-4 div.nested-flex-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 15px;  /* Keep the three columns nicely separated visually */
+}
+#box-container-4 div.nested-flex-box.third {
+    align-self: flex-start;
+}
+#box-container-4 div.single-box {
+    font-size: 1.5em;
+    height: auto;
+    border-radius: 10px;
+    padding: 10px 20px;   /* Giving these a really "button" look */
+    margin-bottom: 20px;
+    width: auto;
+}
+
+#box-container-4 .box1 { order: 3; }
+#box-container-4 .box2 { order: 5; }
+#box-container-4 .box5 { order: 8; }
+#box-container-4 .box7 { order: 11; }
+#box-container-4 .box10 { order: 14; }
+#box-container-4 .box12 { order: 15; }
+
+
+/******************* FLEX GROW *****************/
+#box-container-4 .nested-flex-box.first {
+    flex-grow: 1;
+}
+#box-container-4 .nested-flex-box.second {
+    flex-grow: 2;
+}
+#box-container-4 .nested-flex-box.third {
+    flex-grow: 1;
+}
+
+/******************* FOOTER *****************/
+footer {
+    padding: 30px 10px;
+    margin-top: 40px;
+    text-align: center;
+    background-color: rgb(49, 53, 55);
+}
