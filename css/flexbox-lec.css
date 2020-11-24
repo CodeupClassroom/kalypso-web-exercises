@@ -78,7 +78,7 @@ div.single-box {
     /* TODO: Declare the display to be flex */
     /* TODO: Set up flex properties for this container */
 
-    height: 450px;         /* Only using this to show align-items at large resolutions */
+    /*height: 450px;         !* Only using this to show align-items at large resolutions *!*/
 }
 @media screen and (max-width: 779px) {
     /* don't worry about this yet (It's just to keep the display nice as the browser gets smaller) */
