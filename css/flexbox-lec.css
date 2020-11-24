@@ -23,18 +23,17 @@ div.main {
 /********************* CONTAINER 1 *******************/
 #box-container-1 {
     /* This is where I'll declare the display: flex for all the inner boxes */
-    display: flex;
+    /* TODO: Set up display to be flex */
     width: 100%;
-    /*justify-content: flex-start;*/
-    flex-wrap: wrap;
+    /* TODO: Set up flex wrapping */
     margin-bottom: 30px;
 }
 div.single-box {
     display: inherit;
     width: 200px;
     height: 200px;
-    justify-content: center; /*  Centers text horizontally (main axis) */
-    align-items: center;     /*  Centers text vertically  (cross axis) */
+    /* TODO: Center text horizontally (main axis) */
+    /* TODO: Center text vertically  (cross axis) */
     font-size: 2em;
     margin-bottom: 10px;     /*  Little space beneath each of the boxes */
     cursor: pointer;         /*  Make it pretty when we mouseover       */
@@ -49,11 +48,9 @@ div.single-box {
 /********************* CONTAINER 2 *******************/
 /* Now some rules for the second set of boxes */
 #box-container-2 {
-    display: flex;
+    /* TODO: Declare the display to be flex */
     width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap-reverse;
-    flex-direction: row-reverse;
+    /* TODO: Set up flex properties for this container */
     margin-bottom: 30px;
 }
 #box-container-2 div.single-box {
@@ -64,43 +61,39 @@ div.single-box {
 }
 /********************* CONTAINER 3 *******************/
 #box-container-3 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    /* TODO: Declare the display to be flex */
+    /* TODO: Set up flex properties for this container */
     height: 400px;
-    justify-content: space-around;
     margin-bottom: 30px;
 }
 #box-container-3 div.single-box {
     height: auto;
     width: 100px;
-    border-radius: 10px;
+    border-radius: 10px;  /* Rounding those borders */
     padding: 10px 20px;   /* Giving these a really "button" look */
 }
 /********************* CONTAINER 4 *******************/
 /******************* 3 subcontainers *****************/
 #box-container-4 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around; /* Horizontal Alignment of all 3 child containers */
-    align-items: flex-end; /* Vertical Alignment */
-    flex-wrap: wrap;       /* All the buttons can wrap around themselves now */
+    /* TODO: Declare the display to be flex */
+    /* TODO: Set up flex properties for this container */
+
     height: 450px;         /* Only using this to show align-items at large resolutions */
 }
 @media screen and (max-width: 779px) {
-    /* don't worry about this yet */
+    /* don't worry about this yet (It's just to keep the display nice as the browser gets smaller) */
     #box-container-4 {
         height: auto;
     }
 }
 #box-container-4 div.nested-flex-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    /* TODO: Declare the display to be flex */
+    /* TODO: Set up flex properties for this container */
+
     padding: 0 15px;  /* Keep the three columns nicely separated visually */
 }
 #box-container-4 div.nested-flex-box.third {
-    align-self: flex-start;
+    /* TODO: Set up flex properties for this container */
 }
 #box-container-4 div.single-box {
     font-size: 1.5em;
@@ -111,23 +104,24 @@ div.single-box {
     width: auto;
 }
 
-#box-container-4 .box1 { order: 3; }
-#box-container-4 .box2 { order: 5; }
-#box-container-4 .box5 { order: 8; }
-#box-container-4 .box7 { order: 11; }
-#box-container-4 .box10 { order: 14; }
-#box-container-4 .box12 { order: 15; }
+/* TODO: Give each of these boxes a random order to see how we can change the order with CSS */
+#box-container-4 .box1 {  }
+#box-container-4 .box2 {  }
+#box-container-4 .box5 {  }
+#box-container-4 .box7 {  }
+#box-container-4 .box10 {  }
+#box-container-4 .box12 {  }
 
 
 /******************* FLEX GROW *****************/
 #box-container-4 .nested-flex-box.first {
-    flex-grow: 1;
+    /* Add flex grow properties to give these boxes different proportional widths */
 }
 #box-container-4 .nested-flex-box.second {
-    flex-grow: 2;
+    /* Add flex grow properties to give these boxes different proportional widths */
 }
 #box-container-4 .nested-flex-box.third {
-    flex-grow: 1;
+    /* Add flex grow properties to give these boxes different proportional widths */
 }
 
 /******************* FOOTER *****************/
