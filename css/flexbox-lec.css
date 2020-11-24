@@ -23,19 +23,32 @@ div.main {
 /********************* CONTAINER 1 *******************/
 #box-container-1 {
     /* This is where I'll declare the display: flex for all the inner boxes */
-    /* TODO: Set up display to be flex */
+    display: flex;
+    flex-direction: row; /* Defaults to row */
     width: 100%;
-    /* TODO: Set up flex wrapping */
+    flex-wrap: wrap; /* Default wrap value is 'wrap' */
     margin-bottom: 30px;
+    justify-content: space-around;
 }
 div.single-box {
-    display: inherit;
+    display: inherit; /* inherits the display property
+                          of the parent class (it will inherit
+                                    a display: flex; */
+    flex-direction: row;
     width: 200px;
     height: 200px;
     /* TODO: Center text horizontally (main axis) */
+    /*
+     * justify-content   JUSTIFY = main axis | CONTENT = squad
+     * justify-items     JUSTIFY = main axis | ITEMS   = single person
+     * align-content     ALIGN = cross axis  | CONTENT = squad
+     * align-items       ALIGN = cross axis  | ITEMS   = single person
+     */
+    justify-content: center;
     /* TODO: Center text vertically  (cross axis) */
+    align-items: center;
     font-size: 2em;
-    margin-bottom: 10px;     /*  Little space beneath each of the boxes */
+    margin: 10px;     /*  Little space beneath each of the boxes */
     cursor: pointer;         /*  Make it pretty when we mouseover       */
 }
 /********************* SET ALL BOX COLORS *******************/
@@ -49,8 +62,11 @@ div.single-box {
 /* Now some rules for the second set of boxes */
 #box-container-2 {
     /* TODO: Declare the display to be flex */
+    display: flex;
+    flex-direction: column;
     width: 100%;
     /* TODO: Set up flex properties for this container */
+    flex-wrap: wrap;
     margin-bottom: 30px;
 }
 #box-container-2 div.single-box {
@@ -62,10 +78,33 @@ div.single-box {
 /********************* CONTAINER 3 *******************/
 #box-container-3 {
     /* TODO: Declare the display to be flex */
+    display: flex;
     /* TODO: Set up flex properties for this container */
     height: 400px;
     margin-bottom: 30px;
+    justify-content: space-around;
+    /*align-items: center;*/
+    align-items: center; /* All boxes by default */
+    /*align-content: center;*/
+    flex-wrap: wrap;
 }
+#box-container-3 div.box3 {
+    /*align-self: flex-start;*/
+    align-self: flex-start; /* uniquely box 3, separate from the other boxes */
+}
+/* Align boxes 1 and 5 to the bottom of the column */
+#box-container-3 div.box1, #box-container-3 div.box5 {
+    align-self: flex-end;
+}
+/* Assign each of the boxes a "grow" value so
+    they can be sized proportionally to each other */
+#box-container-3 div.box2, #box-container-3 div.box4 {
+    flex-grow: 1;
+}
+#box-container-3 div.box3 {
+    flex-grow: 3;
+}
+
 #box-container-3 div.single-box {
     height: auto;
     width: 100px;
@@ -73,12 +112,14 @@ div.single-box {
     padding: 10px 20px;   /* Giving these a really "button" look */
 }
 /********************* CONTAINER 4 *******************/
-/******************* 3 subcontainers *****************/
+/******************* 3 sub-containers *****************/
 #box-container-4 {
     /* TODO: Declare the display to be flex */
+    display: flex;
     /* TODO: Set up flex properties for this container */
-
-    /*height: 450px;         !* Only using this to show align-items at large resolutions *!*/
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 450px;         /* Only using this to show align-items at large resolutions */
 }
 @media screen and (max-width: 779px) {
     /* don't worry about this yet (It's just to keep the display nice as the browser gets smaller) */
@@ -88,7 +129,10 @@ div.single-box {
 }
 #box-container-4 div.nested-flex-box {
     /* TODO: Declare the display to be flex */
+    display: inherit;
     /* TODO: Set up flex properties for this container */
+    flex-direction: column;
+    justify-content: space-between;
 
     padding: 0 15px;  /* Keep the three columns nicely separated visually */
 }
@@ -99,18 +143,22 @@ div.single-box {
     font-size: 1.5em;
     height: auto;
     border-radius: 10px;
-    padding: 10px 20px;   /* Giving these a really "button" look */
+    padding: 20px 45px;   /* Giving these a really "button" look */
     margin-bottom: 20px;
     width: auto;
 }
 
 /* TODO: Give each of these boxes a random order to see how we can change the order with CSS */
-#box-container-4 .box1 {  }
-#box-container-4 .box2 {  }
-#box-container-4 .box5 {  }
-#box-container-4 .box7 {  }
-#box-container-4 .box10 {  }
-#box-container-4 .box12 {  }
+#box-container-4 .box1 { order: 2; }
+#box-container-4 .box2 { order: 5; }
+#box-container-4 .box3 { order: 3; }
+#box-container-4 .box4 { order: 4; }
+#box-container-4 .box5 { order: 1; }
+
+
+#box-container-4 .box7 { order: 2; }
+#box-container-4 .box10 { order: 1; }
+#box-container-4 .box8 { order: 6; }
 
 
 /******************* FLEX GROW *****************/
