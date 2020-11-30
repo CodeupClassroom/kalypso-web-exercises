@@ -1,0 +1,19 @@
+.fancy-header {
+    color:purple;
+}
+
+th {
+    background-color: coral;
+}
+
+p>strong {
+    color:cornflowerblue;
+}
+
+h3, h6 {
+    text-decoration: underline;
+}
+
+h1.fancy-header {
+    font-size: 30px;
+}
