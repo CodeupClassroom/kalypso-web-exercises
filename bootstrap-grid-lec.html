@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Grid Lecture</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Jost', sans-serif;
+            color: #F9F8F8
+        }
+        body {
+            background: #111B36;
+        }
+        .block {
+            height: 150px
+        }
+        .bg-1 {
+            background: #354347;
+        }
+        .bg-2 {
+            background: #AE5A45;
+        }
+        .bg-3 {
+            background: #D5B263;
+        }
+        .bg-4 {
+            background: #98908A;
+        }
+        .bg-5 {
+            background: #272B37;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bootstrap Grid Lecture</h1>
+
+    <main class="container">
+        <section class="row bg-5">
+            <div class="col-12 col-md-8 col-xl-3 block bg-1">c1</div>
+            <div class="col-12 col-md-4 col-xl-3 block bg-2">c2</div>
+            <div class="col-12 col-md-3 col-xl-3 block bg-3">c3</div>
+            <div class="col-12 col-md-9 col-xl-3 block bg-4">
+                <div class="row">
+                    <div class="col-1 bg-1 p-0">c</div>
+                    <div class="col-1 bg-2 p-0">c</div>
+                    <div class="col-1 bg-3 p-0">c</div>
+                    <div class="col-1 bg-1 p-0">c</div>
+                    <div class="col-1 bg-2 p-0">c</div>
+                    <div class="col-1 bg-3 p-0">c</div>
+                    <div class="col-1 bg-1 p-0">c</div>
+                    <div class="col-1 bg-2 p-0">c</div>
+                    <div class="col-1 bg-3 p-0">c</div>
+                    <div class="col-1 bg-1 p-0">c</div>
+                    <div class="col-1 bg-2 p-0">c</div>
+                    <div class="col-1 bg-3 p-0">c</div>
+                    <div class="col-12">col 12</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
