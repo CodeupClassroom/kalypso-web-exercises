@@ -11,6 +11,7 @@ var callback = function(){
     i++;
     console.log("Hooray!! " + i);
 }
+setInterval(callback, 1000);
 
 // set up to run callback() after 4 seconds
 var timeout = setTimeout(callback,
@@ -29,3 +30,12 @@ setTimeout(function(){
 // this is how we would navigate to another page
 // WARNING: our js will not exist once we navigate away!
 // window.location = "https://java.codeup.com";
+
+// Here is an example of javascript closures
+// var callback = function(i){
+//     return function() {
+//         i++;
+//         console.log("Hooray!! " + i);
+//     }
+// }
+// setInterval(callback(10), 1000);
