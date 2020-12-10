@@ -1,1 +1,2 @@
-let mapboxToken = 'pk.eyJ1IjoiY2FzZXlmcmlkYXkiLCJhIjoiY2tjem52NTMyMDA0ZTJzbW1odHJkODRtMiJ9.2k8YhQ3-Nk9WvqFfpyTWmA';
+// This file is for saving API keys, and NOT uploading to Github
+let mapboxToken = 'pk.eyJ1IjoiY2FzZXlmcmlkYXkiLCJhIjoiY2tpajE0M2JsMWw4bDJwcXcwMjhxc3RtYyJ9.w4WFbvHqErC5YNDwOPK0DQ';

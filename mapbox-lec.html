@@ -5,13 +5,20 @@
     <title>First Mapbox Map</title>
     <!-- Mapbox CSS -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+
     <!-- Custom CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 	rel="stylesheet" 	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 	crossorigin="anonymous">
     <style>
         #map {
             /* the width and height may be set to any size */
             width: 100%;
-            height: 700px;
+            height: 500px;
+        }
+        .codeup-popup .mapboxgl-popup-content {
+            background: #77AF00;
+        }
+        .codeup-popup .mapboxgl-popup-tip {
+            border-top-color: #77AF00;
         }
     </style>
 </head>
@@ -19,8 +26,12 @@
 <div class="container">
     <h1>My First Mapbox Map!</h1>
 </div>
+
 <div class="container">
     <div class="row my-3">
+        <div class="col">
+            <button type="button" class="btn btn-primary w-100" id="search-button">Search Again</button>
+        </div>
         <div class="col">
             <button type="button" class="btn btn-primary w-100" id="reset-button">Reset</button>
         </div>
@@ -53,73 +64,12 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 <!-- Custom JS -->
-<script>
-    mapboxgl.accessToken = mapboxToken;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [-98.4916, 29.4252]
-    });
-
-
-    var zoomSelect = document.getElementById("zoom-select")
-    zoomSelect.addEventListener("change", function (event) {
-        var zoomValue = zoomSelect.options[zoomSelect.selectedIndex].value;
-        map.setZoom(parseInt(zoomValue));
-    })
-
-    var styleSelect = document.getElementById("style-select")
-    styleSelect.addEventListener("change", function (event) {
-        var styleValue = styleSelect.options[styleSelect.selectedIndex].value;
-        var styleString = "mapbox://styles/mapbox/" + styleValue;
-        map.setStyle(styleString);
-    })
-
-    var resetButton = document.getElementById("reset-button")
-    resetButton.addEventListener("click", function (event) {
-        map.setZoom(10);
-        map.setCenter([-98.4916, 29.4252]);
-        map.setStyle('mapbox://styles/mapbox/streets-v9');
-
-        //TODO: RESET the dropdown to initial option
-        //TODO: RESET style dropdown to initial option
-    });
-
-
-    var restArray = [
-        {
-            address: "5146 Broadway St, San Antonio, TX 78209",
-            popupHTML: "<p>Sorrento Pizza & Restaurant\n</p>"
-        },
-        {
-            address: "3021 MacArthur View, San Antonio, TX 78217",
-            popupHTML: "<p>Last Slice Pizza\n</p>"
-        },
-        {
-            address: "2818 West Ave, San Antonio, TX 78201",
-            popupHTML: "<p>Tacos West Ave <br> 2818 West Ave, San Antonio, TX 78201</p>"
-        }
-    ]
-
-    restArray.forEach(function (rest) {
-        console.log(rest);
-        geocode(rest.address, mapboxToken).then(function(coordinates) {
-            var popup = new mapboxgl.Popup()
-                .setHTML(rest.popupHTML);
-
-            var marker = new mapboxgl.Marker()
-                .setLngLat(coordinates)
-                .setPopup(popup)
-                .addTo(map);
-        });
-    });
-
-
-</script>
 <script src="js/mapbox-lec.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
 </body>
 </html>
