@@ -62,7 +62,7 @@ var map = new mapboxgl.Map({
 var marker = new mapboxgl.Marker({
     color: 'green',
 })
-    .setLngLat([-98.4916, 29.4260])
+    .setLngLat([-98.48613798052709, 29.42598667424656])
     .addTo(map);
 // TODO TOGETHER: Change the color of the marker
 
