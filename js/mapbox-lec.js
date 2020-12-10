@@ -111,7 +111,7 @@ document.getElementById("search-button").addEventListener("click", function(){
     searchString = prompt("What would you like to search?");
     geocode(searchString, mapboxToken).then(function(result){
         console.log(result);
-        // map.setCenter(result); // map.setCenter([-98.48, 29.426])
+        // map.setCenter(result); // i.e. map.setCenter([-98.48, 29.426])
         map.flyTo({
             center: result,
             zoom: 14,
@@ -119,16 +119,13 @@ document.getElementById("search-button").addEventListener("click", function(){
             curve: 1,
         })
         marker.setLngLat(result);
-        // map.setZoom(20);
 
         // Want to add a popup that displays the name of the location at the LONG / LAT coordinates we just found
         reverseGeocode(result, mapboxToken).then(function(placeName) {
             // set the text of the popup to "New York City" (for example)
             console.log("after reverse geocode, the place name is: " + placeName);
             popup.setText(placeName);
-
-            // add the popup to the marker at the search result location
-            // marker.setPopup(popup);
+            // the popup is already added to the marker, so NO need to add it again with marker.setPopup!
 
         })
     })
