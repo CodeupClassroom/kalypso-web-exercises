@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--h1, p, ul, li, div-->
+<h1 id="page-title">Hello, World</h1>
+<div>
+    <div id="awesome-paragraph">
+        <ul>
+            <li class="codeup">First item</li>
+            <li class="">Second Item</li>
+            <li class="codeup">Third Item</li>
+            <li class="list-sad">Fourth Item</li>
+            <li class="list-sad">Fifth Item</li>
+        </ul>
+    </div>
+    <p id="codeup">
+        Here is a story all about how my life got flipped turned upside down.
+    </p>
+</div>
+
+<!-- Include Local jQuery File -->
+<script src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript">
+    "use strict";
+    $(document).ready(function() {
+       // the document is ready, alert the window!
+       // alert("The window document is completely ready!");
+        var codeupDiv = document.getElementById("codeup");
+        codeupDiv = $('#codeup');
+        // alert( $('#awesome-paragraph').html() );
+        // alert( $('#page-title').html() );
+
+        // $('.codeup').css('border', '1px solid red');
+
+        // $('li').css('font-size', '20px');
+        // $('h1').css('background-color', 'rebeccapurple');
+        // $('p').css('background-color', 'rebeccapurple');
+        // $('li').css('background-color', 'rebeccapurple');
+        $('h1, p, li').css('background-color', 'rebeccapurple');
+
+    });
+</script>
+</body>
+</html>
