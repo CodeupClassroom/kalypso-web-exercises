@@ -21,17 +21,22 @@
     <p id="codeup">
         Here is a story all about how my life got flipped turned upside down.
     </p>
+    <p id="codeup2">
+        Here is a continuation of a story all about how my life got flipped turned upside down.
+    </p>
 </div>
 
 <!-- Include Local jQuery File -->
-<script src="js/jquery-2.2.4.js"></script>
+<!--<script src="js/jquery-2.2.4.js"></script>-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script type="text/javascript">
     "use strict";
-    $(document).ready(function() {
+    //Intro and Selectors
+    // $(document).ready(function() {
        // the document is ready, alert the window!
        // alert("The window document is completely ready!");
-        var codeupDiv = document.getElementById("codeup");
-        codeupDiv = $('#codeup');
+       //  var codeupDiv = document.getElementById("codeup");
+       //  codeupDiv = $('#codeup');
         // alert( $('#awesome-paragraph').html() );
         // alert( $('#page-title').html() );
 
@@ -41,9 +46,44 @@
         // $('h1').css('background-color', 'rebeccapurple');
         // $('p').css('background-color', 'rebeccapurple');
         // $('li').css('background-color', 'rebeccapurple');
-        $('h1, p, li').css('background-color', 'rebeccapurple');
+        // $('h1, p, li').css('background-color', 'rebeccapurple');
 
-    });
+    // Mouse Events.
+
+
+
+    // TODO: Remove your custom jQuery code from previous exercises.
+    //DONE
+    // TODO:    Add jQuery code that will change the background color of an h1 element when clicked.
+
+    $("#page-title").click(function(){
+        $(this).css("background-color", "rebeccapurple");
+
+    })
+
+    // TODO:    Make all paragraphs have a font size of 18px when they are double clicked.
+
+    $("p").dblclick(function(){
+        $("p").css("font-size", "150%");
+
+    })
+
+    // TODO:   Set all li text color to red when the mouse is hovering; reset to black when it is not.
+
+    $("li").hover(
+        function(){
+        //    Mouseenter: color flip to red
+        $("li").css("color", "red");
+        $("li").css("width", "max-content");
+    }, function (){
+        //    Mouseleave: color flips back to black
+        $("li").css("color", "black");
+        $("li").css("width", "max-content")
+        }
+
+    )
+
+    // });
 </script>
 </body>
 </html>
