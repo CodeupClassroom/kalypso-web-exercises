@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Astronomy FAQs</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <style>
+        .invisible { visibility: hidden }
+        /*.invisible { display: none }*/
+        dt::first-letter {
+            font-size: large;
+            font-weight: bold;
+            color: red;
+        }
+        .highlighted { background-color: goldenrod }
+        .bold { font-weight: bolder }
+        .blue { color: coral }
+    </style>
+</head>
+<body class="container">
+<h1>Astronomy FAQs</h1>
+<a href="#" id="toggle">Toggle Details</a>
+<dl>
+    <dt>Andromeda</dt>
+    <dd>The Andromeda Galaxy, also known as Messier 31, M31, or NGC 224 and originally the Andromeda Nebula, is a barred spiral galaxy approximately 2.5 million light-years from Earth and the nearest major galaxy to the Milky Way.</dd>
+    <dt>Betelgeuse</dt>
+    <dd>Betelgeuse is usually the tenth-brightest star in the night sky and, after Rigel, the second-brightest in the constellation of Orion. It is a distinctly reddish semiregular variable star whose apparent magnitude, varying between +0.0 and +1.6, has the widest range displayed by any first-magnitude star.</dd>
+    <dt>Ceres</dt>
+    <dd>Ceres is the largest object in the main asteroid belt that lies between the orbits of Mars and Jupiter. With a diameter of 940 km, Ceres is both the largest of the asteroids and the only dwarf planet inside Neptune's orbit. It is the 25th-largest body in the Solar System within the orbit of Neptune. </dd>
+    <dt>Deimos</dt>
+    <dd>Deimos is the smaller and outermost of the two natural satellites of Mars, the other being Phobos. Deimos has a mean radius of 6.2 km and takes 30.3 hours to orbit Mars. Deimos is 23,460 km from Mars, much further than Mars's other moon, Phobos.</dd>
+    <dt>Europa</dt>
+    <dd>Europa, or Jupiter II, is the smallest of the four Galilean moons orbiting Jupiter, and the sixth-closest to the planet of all the 79 known moons of Jupiter. It is also the sixth-largest moon in the Solar System.</dd>
+    <dt>Fortuna</dt>
+    <dd>Fortuna (minor planet designation: 19 Fortuna) is one of the largest main-belt asteroids. It has a composition similar to 1 Ceres: a darkly colored surface that is heavily space-weathered with the composition of primitive organic compounds, including tholins.</dd>
+    <dt>Ganymede</dt>
+    <dd>Ganymede, a satellite of Jupiter, is the largest and most massive of the Solar System's moons. The ninth-largest object in the Solar System, it is the largest without a substantial atmosphere. It has a diameter of 5,268 km, making it 26% larger than the planet Mercury by volume, although it is only 45% as massive.</dd>
+    <dt>Hyperion</dt>
+    <dd>Hyperion, also known as Saturn VII, is a moon of Saturn discovered by William Cranch Bond, George Phillips Bond and William Lassell in 1848. It is distinguished by its irregular shape, its chaotic rotation, and its unexplained sponge-like appearance. It was the first non-round moon to be discovered.</dd>
+    <dt>IO</dt>
+    <dd>Io, or Jupiter I, is the innermost and third-largest of the four Galilean moons of the planet Jupiter. It is the fourth-largest moon in the Solar System, has the highest density of all of them, and has the lowest amount of water of any known astronomical object in the Solar System.</dd>
+    <dt>Jupiter</dt>
+    <dd>Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. </dd>
+    <dt>Kalypso</dt>
+    <dd>Kalypso is a moon of Saturn. It was It was discovered in 1980, from ground-based observations and is co-orbital with the moon Tethys.</dd>
+</dl>
+
+
+<!-- jQuery and bootstrap -->
+<script src="js/jquery-2.2.4.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function (){
+        $("dd").toggleClass("invisible");
+        $("#toggle").click(function(){
+            $("dd").toggleClass("invisible");
+        });
+
+        $("dt").click(function(){
+           $(this).toggleClass("highlighted");
+        });
+    });
+</script>
+</body>
+</html>
