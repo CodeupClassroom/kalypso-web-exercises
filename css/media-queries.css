@@ -1,0 +1,15 @@
+body {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.alert-info, h1, .nav-links {
+    text-align: center;
+}
+ul {
+    list-style: none;
+}
+
+.header-img img {
+    max-width: 100%;
+}
+
