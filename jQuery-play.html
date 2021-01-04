@@ -18,6 +18,15 @@
         .underlined {
             text-decoration: underline;
         }
+        .alternate-background {
+            background-color: cadetblue;
+        }
+        .primary-background {
+            background-color: lightgreen;
+        }
+        .secondary-background {
+            background-color: mediumorchid;
+        }
     </style>
 
 </head>
@@ -66,13 +75,22 @@
             </div>
         </article>
     </section>
-<!--    <section id="list">-->
-<!--        <ul>-->
-<!--            <li>Puppies</li>-->
-<!--            <li>Bunnies</li>-->
-<!--            <li>Chickies</li>-->
-<!--        </ul>-->
-<!--    </section>-->
+    <section id="list">
+        <ul>
+            <li>Puppies</li>
+            <li>Kitties</li>
+            <li>Bunnies</li>
+            <li>Chickies</li>
+            <li>Snakies</li>
+            <li>Birdies</li>
+            <li>Horsies</li>
+            <li>Iggies</li>
+            <li>Foxxies</li>
+            <li>Fishies</li>
+
+        </ul>
+    </section>
+    <h2>The end</h2>
 </main>
 <!-- jQuery and bootstrap -->
 <script src="js/jquery-2.2.4.js"></script>
@@ -83,31 +101,8 @@
     $(document).ready(function(){
 
         console.log("Ready to play!");
-        $(".jumbotron").css("background-color","salmon"); // setter
 
-        // $("#panel1").css("background-color", "rebeccapurple"); // setter
-        var panel1Background = $("#panel1").css("background-color");  // getter
-        console.log(panel1Background);
-
-        var panel1Color = $("#panel2").css("color", panel1Background);
-        // console.log(panel1Color);
-
-        var panel3Content = $("#panel3").html(); // getter
-        console.log(panel3Content);
-        // $("#panel3").html("Here is modified content"); // setter
-
-        $("#btn1").click(function () {
-            $("#panel1").toggleClass("orange");
-        });
-        $("#btn2").click(function () {
-            $("#panel2").addClass("red");
-        });
         $("#btn3").click(function () {
-                // if (!$("#panel3").hasClass("hidden")) {
-                //     $("#panel3").addClass("hidden");
-                // } else {
-                //     $("#panel3").removeClass("hidden");
-                // }
             $("#panel3").toggleClass("hidden");
         });
         $("#btn4").click(function () {
@@ -115,13 +110,36 @@
         });
 
         // using data- attribute
-        $(".btn").each(function(){
-
+        // $(".btn").each(function(){
+        //
+        //     var id = $(this).attr("data-id");
+        //     $(this).dblclick(function(){
+        //         $("#panel"+id).toggleClass("hidden");
+        //     })
+        // });
+        $(".btn").dblclick(function(){
             var id = $(this).attr("data-id");
-            $(this).dblclick(function(){
-                $("#panel"+id).toggleClass("hidden");
-            })
+            $(this).dblclick(function() {
+                $("#panel" + id).toggleClass("hidden");
+            });
         });
+
+        $("li").first().addClass("underlined");
+        $("li").last().addClass("underlined");
+        $("li:nth-child(4)").addClass("underlined");
+
+        $("li").each(function(i){
+                if (i %3 === 0)
+                    $(this).addClass("primary-background");
+                else if (i%3 === 1)
+                    $(this).addClass("secondary-background");
+                else
+                    $(this).addClass("alternate-background");
+            });
+
+        $("li").click(function(){
+            $(this).next().toggleClass("cute");
+        })
 
     });
 
