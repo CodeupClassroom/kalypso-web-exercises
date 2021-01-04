@@ -13,7 +13,7 @@
             font-weight: bold;
             color: red;
         }
-        .highlighted { background-color: goldenrod }
+        .highlighted { background-color: yellow }
         .bold { font-weight: bolder }
         .blue { color: coral }
     </style>
@@ -46,6 +46,30 @@
     <dd>Kalypso is a moon of Saturn. It was It was discovered in 1980, from ground-based observations and is co-orbital with the moon Tethys.</dd>
 </dl>
 
+<h3>Europa</h3>
+<ul>
+    <li>Orbits Jupiter</li>
+    <li>Named after Europa (consort of Zeus), a Phoenician princess in Greek mythology, from whom the name of the continent Europe is taken</li>
+    <li>Also one of the Oceanids, the daughters of the Titan Oceanus</li>
+    <li>Slightly smaller than Earth's moon</li>
+</ul>
+<h3>Hyperion</h3>
+<ul>
+    <li>Orbits Saturn</li>
+    <li>The first non-round moon to be discovered</li>
+    <li>Also a great series of sci-fi novels by Dan Simmons </li>
+    <li>One of the twelve Titan children of Gaia (Earth) and Uranus (Sky) who, led by Cronus, overthrew their father Uranus and were themselves later overthrown by the Olympians.</li>
+</ul>
+<h3>Kalypso</h3>
+<ul>
+    <li>Orbits Saturn</li>
+    <li>Named after a Sea Nymph in Greek Mythology</li>
+    <li>It has one of the highest albedos in the solar system.</li>
+    <li>Also the name of a very dark asteroid in the asteroid belt (53 Kalypso)</li>
+</ul>
+
+<button id="traversing">GO</button>
+
 
 <!-- jQuery and bootstrap -->
 <script src="js/jquery-2.2.4.js"></script>
@@ -60,6 +84,19 @@
 
         $("dt").click(function(){
            $(this).toggleClass("highlighted");
+        });
+
+        $("#traversing").click(function (){
+            // $("ul li:nth-last-child(1)").addClass("highlighted");
+            $("ul").each(function(){
+                $(this).children().last().addClass("highlighted");
+            });
+        });
+        $("h3").click(function(){
+            $(this).next().children("li").addClass("bold");
+        });
+        $("li").click(function(){
+            $(this).parent().children().first().addClass("blue");
         });
     });
 </script>
