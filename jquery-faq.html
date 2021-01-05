@@ -19,6 +19,10 @@
     </style>
 </head>
 <body class="container">
+
+<div id="newsletter" class="alert alert-dismissible"><span id="close-button">x</span><h2>Would you like to sign up for our newsletter?</h2>   </div>
+<div id="register"><h2>Please register for the site.</h2></div>
+
 <h1>Astronomy FAQs</h1>
 <a href="#" id="toggle">Toggle Details</a>
 <dl>
@@ -46,22 +50,22 @@
     <dd>Kalypso is a moon of Saturn. It was It was discovered in 1980, from ground-based observations and is co-orbital with the moon Tethys.</dd>
 </dl>
 
-<h3>Europa</h3>
-<ul>
+<h3 class="parkName">Europa</h3>
+<ul class="facts">
     <li>Orbits Jupiter</li>
     <li>Named after Europa (consort of Zeus), a Phoenician princess in Greek mythology, from whom the name of the continent Europe is taken</li>
     <li>Also one of the Oceanids, the daughters of the Titan Oceanus</li>
     <li>Slightly smaller than Earth's moon</li>
 </ul>
-<h3>Hyperion</h3>
-<ul>
+<h3 class="parkName">Hyperion</h3>
+<ul class="facts">
     <li>Orbits Saturn</li>
     <li>The first non-round moon to be discovered</li>
     <li>Also a great series of sci-fi novels by Dan Simmons </li>
     <li>One of the twelve Titan children of Gaia (Earth) and Uranus (Sky) who, led by Cronus, overthrew their father Uranus and were themselves later overthrown by the Olympians.</li>
 </ul>
-<h3>Kalypso</h3>
-<ul>
+<h3 class="parkName">Kalypso</h3>
+<ul class="facts">
     <li>Orbits Saturn</li>
     <li>Named after a Sea Nymph in Greek Mythology</li>
     <li>It has one of the highest albedos in the solar system.</li>
@@ -98,6 +102,18 @@
         $("li").click(function(){
             $(this).parent().children().first().addClass("blue");
         });
+
+        $("#close-button").click(function(){
+            $("#newsletter").hide(1000);
+        });
+
+        $(".facts").hide();
+        $(".parkName").click(function(){
+            $(this).next().slideToggle(1000);
+        });
+
+        $("#register").hide().delay(8000).fadeIn(500);
+
     });
 </script>
 </body>

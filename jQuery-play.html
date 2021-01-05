@@ -102,12 +102,12 @@
 
         console.log("Ready to play!");
 
-        $("#btn3").click(function () {
-            $("#panel3").toggleClass("hidden");
-        });
-        $("#btn4").click(function () {
-            $("#panel4").toggleClass("panel-primary").toggleClass("panel-warning");
-        });
+        // $("#btn3").click(function () {
+        //     $("#panel3").toggleClass("hidden");
+        // });
+        // $("#btn4").click(function () {
+        //     $("#panel4").toggleClass("panel-primary").toggleClass("panel-warning");
+        // });
 
         // using data- attribute
         // $(".btn").each(function(){
@@ -117,12 +117,12 @@
         //         $("#panel"+id).toggleClass("hidden");
         //     })
         // });
-        $(".btn").dblclick(function(){
-            var id = $(this).attr("data-id");
-            $(this).dblclick(function() {
-                $("#panel" + id).toggleClass("hidden");
-            });
-        });
+        // $(".btn").dblclick(function(){
+        //     var id = $(this).attr("data-id");
+        //     $(this).dblclick(function() {
+        //         $("#panel" + id).toggleClass("hidden");
+        //     });
+        // });
 
         $("li").first().addClass("underlined");
         $("li").last().addClass("underlined");
@@ -139,6 +139,23 @@
 
         $("li").click(function(){
             $(this).next().toggleClass("cute");
+        });
+
+        $("#btn1").click(function(){
+            $("#panel1").hide(1655).show(4444);
+        })
+        $("#btn2").click(function(){
+            var random = Math.floor(Math.random()*5000);
+            console.log(random);
+            $("#panel2").toggle(random).fadeOut(random).delay(2000).slideDown(random).slideUp(333).fadeIn(random);
+        })
+        $("#btn3").click(function(){
+            // $("#panel3").slideUp(2222).slideDown(2222);
+            $("#panel3").slideToggle(2222);
+        })
+        $("#btn4").click(function(){
+            // $("#panel4").fadeOut(2222).fadeIn(500);
+            $("#panel4").fadeToggle(750);
         })
 
     });
