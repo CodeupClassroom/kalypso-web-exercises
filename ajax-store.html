@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+
+
+    <style>
+        .posiInventory {
+            color: green;
+        }
+
+        .itemTitle {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<button id="refresh">Refresh our inventory</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+
+    // $.ajax("data/inventory.json").done(function(data){
+    //     console.log(data);
+    //
+    // })
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    // $.ajax("data/inventory.json").done(function(data){
+    //     let HTML = "";
+    //
+    //     data.forEach(function(tool){
+    //         console.log(tool);
+    //
+    //         HTML = "<tr>"
+    //             + "<td>" + tool.title + "</td>"
+    //             +"<td>" + tool.quantity + "</td>"
+    //             +"<td>" + tool.price + "</td>"
+    //             +"<td>" + tool.categories + "</td>"
+    //             + "</tr>";
+    //
+    //         $("#insertProducts").append(HTML);
+    //     })
+    // })
+
+    $("#refresh").click(function(){
+        $("#insertProducts").empty();
+        $.ajax("data/inventory.json").done(function(data){
+            let HTML = "";
+
+            data.forEach(function(tool){
+                console.log(tool);
+
+                HTML = "<tr>"
+                    + "<td class='itemTitle'>" + tool.title + "</td>"
+                    +"<td class='posiInventory'>" + tool.quantity + "</td>"
+                    +"<td>" + tool.price + "</td>"
+                    +"<td>" + tool.categories + "</td>"
+                    + "</tr>";
+
+                $("#insertProducts").append(HTML);
+            })
+        })
+
+    })
+
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+})();
+</script>
+
+</body>
+</html>

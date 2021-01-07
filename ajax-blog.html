@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ken's Blog</title>
+
+    <style>
+        p {
+            font-family: monospace;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="posts">
+
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+    (function(){
+       "use strict";
+
+       $.ajax("data/blog.json").done(function (data){
+           // console.log(data);
+
+           let HTML = "";
+
+           data.forEach(function(post){
+               // console.log(post);
+
+               HTML = '<h4>' + post.title + '</h4>'
+               + '<h6>' + post.date + '</h6>'
+               + '<p>' + post.content + '</p>'
+               + '<span>' + post.categories + '</span>';
+
+               $("#posts").append(HTML)
+
+           })
+       })
+
+
+
+
+    })()
+
+
+</script>
+</html>
