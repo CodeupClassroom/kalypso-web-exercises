@@ -1,0 +1,165 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery Fun</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style type="text/css">
+        .jumbotron {text-align: center;}
+        .red {background-color: red;}
+        .purple {background-color: mediumpurple;}
+        .orange {background-color: darkorange}
+        .hidden {display:none;}
+        .cute {
+            color: blueviolet;
+            font-family: cursive;
+        }
+        .underlined {
+            text-decoration: underline;
+        }
+        .alternate-background {
+            background-color: cadetblue;
+        }
+        .primary-background {
+            background-color: lightgreen;
+        }
+        .secondary-background {
+            background-color: mediumorchid;
+        }
+    </style>
+
+</head>
+<body>
+<main class="container">
+    <section class="jumbotron">
+        <h1>Fun with jQuery!</h1>
+        <button id="btn1" type="button" data-id="1" class="btn btn-default">#btn1</button>
+        <button id="btn2" type="button" data-id="2" class="btn btn-default">#btn2</button>
+        <button id="btn3" type="button" data-id="3" class="btn btn-default">#btn3</button>
+        <button id="btn4" type="button" data-id="4" class="btn btn-default">#btn4</button>
+    </section>
+    <section class="col-xs-3">
+        <article id="panel1" class="panel panel-primary">
+            <div class="panel-heading">
+                #panel1
+            </div>
+            <div class="panel-body"> Content
+            </div>
+        </article>
+    </section>
+    <section class="col-xs-3">
+        <article id="panel2" class="panel panel-primary">
+            <div class="panel-heading">
+                #panel2
+            </div>
+            <div class="panel-body"> Content
+            </div>
+        </article>
+    </section>
+    <section class="col-xs-3">
+        <article id="panel3" class="panel panel-primary">
+            <div class="panel-heading">
+                #panel3
+            </div>
+            <div class="panel-body"> Content
+            </div>
+        </article>
+    </section>
+    <section class="col-xs-3">
+        <article id="panel4" class="panel panel-primary">
+            <div class="panel-heading">
+                #panel4
+            </div>
+            <div class="panel-body"> Content
+            </div>
+        </article>
+    </section>
+    <section id="list">
+        <ul>
+            <li>Puppies</li>
+            <li>Kitties</li>
+            <li>Bunnies</li>
+            <li>Chickies</li>
+            <li>Snakies</li>
+            <li>Birdies</li>
+            <li>Horsies</li>
+            <li>Iggies</li>
+            <li>Foxxies</li>
+            <li>Fishies</li>
+
+        </ul>
+    </section>
+    <h2>The end</h2>
+</main>
+<!-- jQuery and bootstrap -->
+<script src="js/jquery-2.2.4.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+
+    $(document).ready(function(){
+
+        console.log("Ready to play!");
+
+        // $("#btn3").click(function () {
+        //     $("#panel3").toggleClass("hidden");
+        // });
+        // $("#btn4").click(function () {
+        //     $("#panel4").toggleClass("panel-primary").toggleClass("panel-warning");
+        // });
+
+        // using data- attribute
+        // $(".btn").each(function(){
+        //
+        //     var id = $(this).attr("data-id");
+        //     $(this).dblclick(function(){
+        //         $("#panel"+id).toggleClass("hidden");
+        //     })
+        // });
+        // $(".btn").dblclick(function(){
+        //     var id = $(this).attr("data-id");
+        //     $(this).dblclick(function() {
+        //         $("#panel" + id).toggleClass("hidden");
+        //     });
+        // });
+
+        $("li").first().addClass("underlined");
+        $("li").last().addClass("underlined");
+        $("li:nth-child(4)").addClass("underlined");
+
+        $("li").each(function(i){
+                if (i %3 === 0)
+                    $(this).addClass("primary-background");
+                else if (i%3 === 1)
+                    $(this).addClass("secondary-background");
+                else
+                    $(this).addClass("alternate-background");
+            });
+
+        $("li").click(function(){
+            $(this).next().toggleClass("cute");
+        });
+
+        $("#btn1").click(function(){
+            $("#panel1").hide(1655).show(4444);
+        })
+        $("#btn2").click(function(){
+            var random = Math.floor(Math.random()*5000);
+            console.log(random);
+            $("#panel2").toggle(random).fadeOut(random).delay(2000).slideDown(random).slideUp(333).fadeIn(random);
+        })
+        $("#btn3").click(function(){
+            // $("#panel3").slideUp(2222).slideDown(2222);
+            $("#panel3").slideToggle(2222);
+        })
+        $("#btn4").click(function(){
+            // $("#panel4").fadeOut(2222).fadeIn(500);
+            $("#panel4").fadeToggle(750);
+        })
+
+    });
+
+</script>
+</body>
+</html>
