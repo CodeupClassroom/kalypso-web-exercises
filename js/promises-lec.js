@@ -57,3 +57,51 @@ Promise.race([catFetch,dogFetch])
         img.setAttribute("src", url);
         document.getElementById("pic").append(img);
     })
+
+
+const getGithubUsernames = () => {
+    return fetch('https://api.github.com/users')
+        .then(response => response.json())
+}
+
+// let githubUsernames = getGithubUsernames(); // NO! promises are asynchronous
+getGithubUsernames().then( users => {
+    console.log(users.length)
+    users.forEach( userObj => {
+        // do something with each username
+        console.log(userObj.login);
+    });
+}).catch(error => console.error(error));
+
+const makeRequest = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (Math.random() > 0.5) {
+                resolve('Here is your data: ...');
+            } else {
+                reject('Network Connection Error!');
+            }
+        }, 1500);
+    });
+}
+
+const request = makeRequest();
+console.log(request); // pending promise
+request.then(message => console.log('Promise resolved!', message));
+// if resolved, will log "Promise resolved!" and "Here is your data: ..."
+request.catch(banana => console.log('Promise rejected!', banana));
+// if rejected, will log "Promise rejected!" and "Network Connection Error!"
+
+Promise.resolve('one').then((one) => {
+    console.log(one);
+    return 'two';
+}).then((two) => {
+    console.log(two);
+    return 'three';
+}).then((three) => {
+    console.log(three);
+});
+
+// write your wait function here
+wait(1000).then(() => console.log('You\'ll see this after 1 second'));
+wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
